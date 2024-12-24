@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RFID Inventory System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>RFID Inventory Management System</h1>
+    </header>
+    <main>
+        <section id="scanner">
+            <h2>RFID Scanner</h2>
+            <input type="text" id="rfidInput" placeholder="Scan RFID Tag" />
+            <button onclick="scanTag()">Scan</button>
+        </section>
+        <section id="controls">
+            <h2>Controls</h2>
+            <input type="text" id="filterInput" placeholder="Filter by Item Name" onkeyup="filterInventory()" />
+            <button onclick="exportToCSV()">Export to CSV</button>
+        </section>
+        <section id="inventory">
+            <h2>Inventory</h2>
+            <table id="inventoryTable">
+                <thead>
+                    <tr>
+                        <th onclick="sortTable(0)">RFID Tag</th>
+                        <th onclick="sortTable(1)">Item Name</th>
+                        <th onclick="sortTable(2)">Timestamp</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Entries will appear here -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
